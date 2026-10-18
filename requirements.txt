@@ -1,1 +1,4 @@
+rich
+httpx
 pydantic
+pydantic[email]
