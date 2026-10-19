@@ -1,7 +1,7 @@
 import atexit
 from pathlib import Path
 
-from pydantic import BaseModel, Field
+from pydantic import UUID4, BaseModel, Field
 
 __all__ = ["FileModel", "get_tokens", "init_vault", "save_vault"]
 
@@ -9,6 +9,7 @@ class FileModel(BaseModel):
     refresh_token: str
     aupd_token: str | None = None
     temp_token: str | None = Field(default=None, exclude=True)
+    person_id: UUID4 | None = None
 
 tokens_file = Path(".tokens")
 tokens: FileModel | None = None
